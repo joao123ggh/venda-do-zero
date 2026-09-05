@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAÇA SUA PRIMEIRA VENDA DO ZERO | Guia Oficial Shopee & Mercado Livre</title>
+    <meta name="description" content="Aprenda o passo a passo para começar a vender na Shopee e no Mercado Livre, mesmo que você nunca tenha vendido nada pela internet.">
+    <meta name="keywords" content="primeira venda, vender na shopee, vender no mercado livre, ecommerce iniciantes, guia venda do zero">
+    <meta name="author" content="Venda do Zero">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FAÇA SUA PRIMEIRA VENDA DO ZERO | Venda do Zero">
+    <meta property="og:description" content="Aprenda o passo a passo para começar a vender na Shopee e no Mercado Livre.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/pdf_pages/pagina_1.png') }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- AVISO DE CONFIGURAÇÃO (se o link ainda for o demonstrativo) -->
+    <div id="checkoutNotice" class="top-notice-banner" style="display: none;">
+        <span>⚙️ <strong>Modo Demonstração:</strong> Configure o link real do checkout no arquivo <code>config.py</code>.</span>
+        <button type="button" class="close-notice" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+
+    <!-- NAVBAR FIXA -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="brand-logo" aria-label="Página inicial Venda do Zero">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                </span>
+                <span class="brand-text">VENDA DO <span class="accent-orange">ZERO</span></span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link active">Início</a>
+                <a href="#previas" class="nav-link">O que você recebe</a>
+                <a href="#conteudo" class="nav-link">Conteúdo</a>
+                <a href="#oferta" class="nav-link">Preço</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="{{ checkout_url }}" class="btn btn-sm btn-primary checkout-btn" target="_blank" rel="noopener noreferrer">
+                    QUERO COMEÇAR
+                </a>
+            </div>
+
+            <!-- Menu Mobile Hambúrguer -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- ==============================================================================
+             1. HERO — PRIMEIRA TELA
+             ============================================================================== -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-container">
+                <!-- Lado Esquerdo: Conteúdo Textual -->
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text">GUIA PRÁTICO PARA INICIANTES</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        FAÇA SUA <br>
+                        <span class="highlight-orange">PRIMEIRA VENDA</span><br>
+                        <span class="text-white">DO ZERO</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        O passo a passo para começar a vender na Shopee e no Mercado Livre
+                    </p>
+
+                    <p class="hero-description">
+                        Descubra como escolher produtos, calcular preços, criar anúncios, produzir conteúdo e organizar seus primeiros passos no comércio online.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="{{ checkout_url }}" class="btn btn-lg btn-primary btn-pulse checkout-btn" target="_blank" rel="noopener noreferrer">
+                            <span>QUERO COMEÇAR AGORA</span>
+                            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <span class="hero-cta-subtext">Acesso ao material digital • Pagamento único por apenas R$ 19,90</span>
+                    </div>
+
+                    <!-- Mini Garantias -->
+                    <div class="hero-features-strip">
+                        <div class="h-feat-item">
+                            <span class="feat-icon">🔒</span>
+                            <span>Pagamento 100% Seguro</span>
+                        </div>
+                        <div class="h-feat-item">
+                            <span class="feat-icon">⚡</span>
+                            <span>Acesso Imediato</span>
+                        </div>
+                        <div class="h-feat-item">
+                            <span class="feat-icon">📱</span>
+                            <span>Celular ou Computador</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lado Direito: Mockup Profissional com Imagens Reais do Ebook -->
+                <div class="hero-visual">
+                    <div class="mockup-bundle-container">
+                        <!-- Brilho Ambiente Laranja -->
+                        <div class="ambient-glow"></div>
+
+                        <!-- Elemento Flutuante 1: Notificação de Pedido -->
+                        <div class="floating-item float-order-badge">
+                            <div class="float-icon-wrap bg-orange-soft">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <div class="float-info">
+                                <strong>Novo Pedido Recebido!</strong>
+                                <span>Shopee &amp; Mercado Livre</span>
+                            </div>
+                        </div>
+
+                        <!-- Elemento Flutuante 2: Mini Gráfico -->
+                        <div class="floating-item float-chart-badge">
+                            <img src="{{ url_for('static', filename='images/grafico_vendas.svg') }}" alt="Gráfico de crescimento" width="130">
+                        </div>
+
+                        <!-- Elemento Flutuante 3: Caixa de Encomenda -->
+                        <div class="floating-item float-box-badge">
+                            <img src="{{ url_for('static', filename='images/caixa_ecommerce.svg') }}" alt="Caixa de entrega" width="70">
+                        </div>
+
+                        <!-- Elemento Flutuante 4: Carrinho de Compras -->
+                        <div class="floating-item float-cart-badge">
+                            <img src="{{ url_for('static', filename='images/carrinho_ecommerce.svg') }}" alt="Carrinho de compras" width="55">
+                        </div>
+
+                        <!-- Notebook com tela do Ebook Real -->
+                        <div class="laptop-device">
+                            <div class="laptop-screen-bezel">
+                                <div class="laptop-webcam"></div>
+                                <div class="laptop-display">
+                                    <div class="reader-ui">
+                                        <div class="reader-toolbar">
+                                            <div class="reader-dots">
+                                                <span></span><span></span><span></span>
+                                            </div>
+                                            <div class="reader-title">FACA-SUA-PRIMEIRA-VENDA-DO-ZERO.pdf</div>
+                                            <div class="reader-zoom">Capítulo 1</div>
+                                        </div>
+                                        <div class="reader-canvas">
+                                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_4.png') }}" alt="Capítulo 1 na tela do Notebook" class="laptop-page-preview">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="laptop-base">
+                                <div class="laptop-notch"></div>
+                            </div>
+                        </div>
+
+                        <!-- Ebook Real 3D Frontal -->
+                        <div class="ebook-3d-book">
+                            <div class="book-spine"></div>
+                            <div class="book-cover-wrap">
+                                <img src="{{ url_for('static', filename='images/pdf_pages/capa-primeira-venda.svg') }}" alt="Capa Real do Ebook Faça Sua Primeira Venda do Zero" class="book-cover-img">
+                            </div>
+                        </div>
+
+                        <!-- Celular ao Lado com App de Vendas -->
+                        <div class="phone-companion">
+                            <div class="phone-case">
+                                <div class="phone-notch-bar"></div>
+                                <div class="phone-screen-content">
+                                    <div class="phone-app-header">
+                                        <span>Painel de Vendas</span>
+                                        <span class="status-live">● Ao vivo</span>
+                                    </div>
+                                    <div class="phone-stat-card">
+                                        <span class="psc-label">Primeiras Vendas</span>
+                                        <span class="psc-val">R$ 497,80</span>
+                                    </div>
+                                    <div class="phone-order-list">
+                                        <div class="pol-item">
+                                            <span class="pol-dot green"></span>
+                                            <span class="pol-text">Pedido Shopee #4092</span>
+                                        </div>
+                                        <div class="pol-item">
+                                            <span class="pol-dot yellow"></span>
+                                            <span class="pol-text">Pedido ML #8812</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Páginas Parciais Espalhadas Sutis com Conteúdo Real -->
+                        <div class="peeking-page peeking-1">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_7.png') }}" alt="Página Custos Real">
+                        </div>
+                        <div class="peeking-page peeking-2">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_16.png') }}" alt="Checklist Real">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             2. PRÉVIAS REAIS DO EBOOK — O QUE VOCÊ VAI RECEBER ASSIM QUE COMPRAR
+             ============================================================================== -->
+        <section class="previews-section" id="previas">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Transparência Total</span>
+                    <h2 class="section-title">
+                        O QUE VOCÊ VAI RECEBER <br class="hidden-mobile">
+                        <span class="highlight-orange">ASSIM QUE COMPRAR</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Veja algumas páginas reais extraídas diretamente do material. Você terá acesso imediato a todo esse conteúdo didático e organizado no seu celular, tablet ou computador.
+                    </p>
+                </div>
+
+                <!-- Filtros de Navegação das Prévias -->
+                <div class="preview-tabs">
+                    <button class="tab-btn active" data-category="todos">Todos os Materiais</button>
+                    <button class="tab-btn" data-category="guia">Ebook Principal</button>
+                    <button class="tab-btn" data-category="modelos">Modelos &amp; Custos</button>
+                    <button class="tab-btn" data-category="videos">Vídeos &amp; Divulgação</button>
+                    <button class="tab-btn" data-category="bonus">Bônus Exclusivos</button>
+                </div>
+
+                <!-- Grid com as Prévias das Páginas Reais -->
+                <div class="previews-grid" id="previewsGrid">
+
+                    <!-- Prévia 1: Capa Oficial -->
+                    <div class="preview-item-card" data-category="guia" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_1.png') }}', 'Capa Oficial — Faça Sua Primeira Venda do Zero', 'O manual passo a passo oficial para começar na Shopee e no Mercado Livre.')">
+                        <div class="item-badge-pill">Capa Oficial</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_1.png') }}" alt="Capa Oficial do Ebook" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Capa Oficial do Ebook</h4>
+                            <p>Manual estruturado para iniciantes darem os primeiros passos no comércio online.</p>
+                            <span class="item-tag-meta">Pág. 01 • Livro Digital</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 2: Capítulo 1 - A Jornada Completa da Venda -->
+                    <div class="preview-item-card" data-category="guia" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_4.png') }}', 'Capítulo 1 — Entendendo Como Funciona Uma Venda Online', 'Os 7 elementos-chave (Produto, Preço, Anúncio, Tráfego, Atendimento, Envio e Análise) e o fluxograma completo da jornada.')">
+                        <div class="item-badge-pill">Capítulo 1</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_4.png') }}" alt="Capítulo 1: Como Funciona Uma Venda Online" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>A Jornada da Venda Online</h4>
+                            <p>Os 7 elementos essenciais e o fluxo visual completo do clique até o pós-venda.</p>
+                            <span class="item-tag-meta">Pág. 04 • Fundamentos</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 3: Capítulo 2 - Escolha de Produtos & Exercício Comparativo -->
+                    <div class="preview-item-card" data-category="guia" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_5.png') }}', 'Capítulo 2 — Como Escolher o Primeiro Produto', 'Critérios de validação de demanda, facilidade de transporte e exercício comparativo de 3 produtos com notas.')">
+                        <div class="item-badge-pill">Capítulo 2</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_5.png') }}" alt="Capítulo 2: Como Escolher o Primeiro Produto" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Escolha de Produtos &amp; Exercício</h4>
+                            <p>Critérios objetivos de validação e tabela prática para comparar 3 produtos antes de investir.</p>
+                            <span class="item-tag-meta">Pág. 05 • Escolha de Itens</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 4: Capítulo 4 - Como Calcular o Preço Real -->
+                    <div class="preview-item-card" data-category="modelos" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_7.png') }}', 'Capítulo 4 — Como Calcular o Preço', 'Fórmula real de precificação com exemplo numérico subtraindo custos, embalagem, taxas da plataforma e impostos.')">
+                        <div class="item-badge-pill">Capítulo 4</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_7.png') }}" alt="Capítulo 4: Como Calcular o Preço" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Cálculo de Preço &amp; Custos</h4>
+                            <p>Estrutura matemática clara: custo + embalagem + comissão + impostos = margem líquida real.</p>
+                            <span class="item-tag-meta">Pág. 07 • Precificação</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 5: Modelo de Anúncio Pronto para Copiar -->
+                    <div class="preview-item-card" data-category="modelos" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_9.png') }}', 'Modelo de Anúncio Pronto', 'Template completo estruturado com título, características, itens inclusos, especificações e dúvidas frequentes.')">
+                        <div class="item-badge-pill">Template Pronto</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_9.png') }}" alt="Modelo de Anúncio Pronto" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Modelo de Anúncio Pronto</h4>
+                            <p>Estrutura pronta para você apenas preencher com os dados do seu produto e publicar.</p>
+                            <span class="item-tag-meta">Pág. 09 • Copiar e Colar</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 6: Como Tirar Fotos pelo Celular -->
+                    <div class="preview-item-card" data-category="guia" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_10.png') }}', 'Capítulo 6 — Como Tirar Fotos', 'As 6 fotos essenciais (Foto Principal, Detalhes, Tamanho/Escala, Produto em Uso, Embalagem e Informações).')">
+                        <div class="item-badge-pill">Capítulo 6</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_10.png') }}" alt="Capítulo 6: Como Tirar Fotos" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Fotos Melhores no Celular</h4>
+                            <p>As 6 fotos fundamentais usando apenas luz natural e fundo limpo, sem estúdio caro.</p>
+                            <span class="item-tag-meta">Pág. 10 • Imagens</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 7: Checklist Completo da Primeira Venda -->
+                    <div class="preview-item-card" data-category="modelos" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_16.png') }}', 'Checklist Completo da Primeira Venda', 'Guia de conferência com 13 itens para checar antes de publicar e 8 tarefas para acompanhar depois.')">
+                        <div class="item-badge-pill">Checklist Prático</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_16.png') }}" alt="Checklist Completo da Primeira Venda" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Checklist Completo da Loja</h4>
+                            <p>Lista de conferência passo a passo antes e depois de publicar para não esquecer nada.</p>
+                            <span class="item-tag-meta">Pág. 16 • Checklist</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 8: BÔNUS 1 - 20 Ideias de Vídeos -->
+                    <div class="preview-item-card" data-category="videos" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_17.png') }}', 'Bônus 1 — 20 Ideias de Vídeos', 'Lista completa com 20 temas de vídeos rápidos para gravar e postar no TikTok e Reels de forma orgânica.')">
+                        <div class="item-badge-pill highlight-pill">Bônus 1 Incluso</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_17.png') }}" alt="Bônus 1: 20 Ideias de Vídeos" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Bônus 1: 20 Ideias de Vídeos</h4>
+                            <p>Roteiros e temas prontos de conteúdo orgânico para divulgar produtos sem precisar aparecer.</p>
+                            <span class="item-tag-meta">Pág. 17 • Bônus Exclusivo</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 9: BÔNUS 2 - Roteiro de 30 Segundos -->
+                    <div class="preview-item-card" data-category="videos" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_18.png') }}', 'Bônus 2 — Roteiro de 30 Segundos', 'Estrutura cronometrada: 0-3s gancho, 3-10s problema, 10-22s informações úteis, 22-27s produto, 27-30s chamada para ação honesta.')">
+                        <div class="item-badge-pill highlight-pill">Bônus 2 Incluso</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_18.png') }}" alt="Bônus 2: Roteiro de 30 Segundos" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Bônus 2: Roteiro de 30 Segundos</h4>
+                            <p>Modelo com minutagem exata de gancho, retenção e chamadas para ação honestas.</p>
+                            <span class="item-tag-meta">Pág. 18 • Roteiro em Vídeo</span>
+                        </div>
+                    </div>
+
+                    <!-- Prévia 10: BÔNUS 3 - Plano de Ação de 30 Dias -->
+                    <div class="preview-item-card" data-category="bonus" onclick="openLightbox('{{ url_for('static', filename='images/pdf_pages/pagina_19.png') }}', 'Bônus 3 — Plano de Ação de 30 Dias', 'Semana 1: Preparação, Semana 2: Montagem, Semana 3: Divulgação, Semana 4: Análise.')">
+                        <div class="item-badge-pill highlight-pill">Bônus 3 Incluso</div>
+                        <div class="preview-thumb-box">
+                            <img src="{{ url_for('static', filename='images/pdf_pages/pagina_19.png') }}" alt="Bônus 3: Plano de Ação de 30 Dias" loading="lazy">
+                            <div class="preview-hover-overlay">
+                                <span class="zoom-btn">🔍 Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <h4>Bônus 3: Plano de Ação 30 Dias</h4>
+                            <p>Cronograma em 4 semanas estruturadas (Preparação, Montagem, Divulgação e Análise de dados).</p>
+                            <span class="item-tag-meta">Pág. 19 • Plano Prático</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Chamada de Ação Abaixo das Prévias -->
+                <div class="previews-footer-cta">
+                    <div class="pfc-box">
+                        <div class="pfc-text">
+                            <h3>Receba todo esse material imediatamente</h3>
+                            <p>Acesso completo ao Ebook + 20 Ideias de Vídeos + Modelos de Anúncio + Checklists + Plano de 30 Dias.</p>
+                        </div>
+                        <div class="pfc-action">
+                            <div class="pfc-price-box">
+                                <span class="pfc-de">De R$ 49,90</span>
+                                <span class="pfc-por">Por <strong>R$ 19,90</strong></span>
+                            </div>
+                            <a href="{{ checkout_url }}" class="btn btn-lg btn-primary checkout-btn" target="_blank" rel="noopener noreferrer">
+                                Quero Ter Acesso Agora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             3. SEÇÃO "VOCÊ ESTÁ COMEÇANDO?" (PROBLEMAS)
+             ============================================================================== -->
+        <section class="problem-section" id="problema">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Você está começando?</span>
+                    <h2 class="section-title">
+                        VOCÊ QUER COMEÇAR A VENDER ONLINE, <br class="hidden-mobile">
+                        MAS <span class="highlight-orange">NÃO SABE POR ONDE COMEÇAR?</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Identifique-se com as principais barreiras enfrentadas por quem dá os primeiros passos no comércio eletrônico.
+                    </p>
+                </div>
+
+                <div class="problem-grid-modern">
+                    <!-- Card 1 -->
+                    <div class="prob-card">
+                        <div class="prob-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3 class="prob-title">"Não sei o que vender"</h3>
+                        <p class="prob-desc">Muitas opções causam indecisão e medo de escolher produtos sem saída ou com margem baixa.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="prob-card">
+                        <div class="prob-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3 class="prob-title">"Não sei quanto cobrar"</h3>
+                        <p class="prob-desc">Dificuldade para embutir comissões, frete e embalagens sem tomar prejuízo na venda.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="prob-card">
+                        <div class="prob-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3 class="prob-title">"Não sei criar anúncios"</h3>
+                        <p class="prob-desc">Incerteza sobre quais palavras colocar no título e como estruturar uma descrição clara.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="prob-card">
+                        <div class="prob-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                <circle cx="12" cy="13" r="4"/>
+                            </svg>
+                        </div>
+                        <h3 class="prob-title">"Não sei tirar boas fotos"</h3>
+                        <p class="prob-desc">Acha que precisa de câmera profissional e estúdio caro para fazer imagens que passem confiança.</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="prob-card">
+                        <div class="prob-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="23 7 16 12 23 17 23 7"/>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="prob-title">"Não sei fazer vídeos"</h3>
+                        <p class="prob-desc">Vergonha ou falta de ideias para gravar conteúdo sem precisar mostrar o próprio rosto.</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="prob-card">
+                        <div class="prob-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 14 14"/>
+                            </svg>
+                        </div>
+                        <h3 class="prob-title">"Não sei como começar"</h3>
+                        <p class="prob-desc">Excesso de vídeos desorganizados na internet que causam confusão em vez de direcionamento.</p>
+                    </div>
+                </div>
+
+                <!-- Banner Conclusivo -->
+                <div class="problem-callout">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-text">
+                        <strong>Este guia foi feito exatamente para eliminar cada uma dessas dúvidas.</strong>
+                        Um caminho simples, organizado e prático para quem está começando do absoluto zero.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             4. SEÇÃO DO CONTEÚDO (MÓDULOS)
+             ============================================================================== -->
+        <section class="content-section" id="conteudo">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Passo a Passo Didático</span>
+                    <h2 class="section-title">
+                        TUDO O QUE VOCÊ PRECISA PARA <br class="hidden-mobile">
+                        <span class="highlight-orange">DAR OS PRIMEIROS PASSOS</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Conteúdo dividido em 6 etapas práticas para você construir sua base sólida no comércio eletrônico.
+                    </p>
+                </div>
+
+                <div class="content-grid-numbered">
+                    <!-- 01 -->
+                    <div class="content-card">
+                        <div class="card-top-meta">
+                            <span class="content-number">01</span>
+                            <span class="content-icon">🚀</span>
+                        </div>
+                        <h3 class="content-title">COMEÇANDO DO ZERO</h3>
+                        <p class="content-desc">
+                            Entenda como funciona o ciclo de uma venda online, quais são os primeiros passos e como evitar os erros mais comuns de iniciantes.
+                        </p>
+                    </div>
+
+                    <!-- 02 -->
+                    <div class="content-card">
+                        <div class="card-top-meta">
+                            <span class="content-number">02</span>
+                            <span class="content-icon">🔍</span>
+                        </div>
+                        <h3 class="content-title">ESCOLHENDO PRODUTOS</h3>
+                        <p class="content-desc">
+                            Aprenda a pesquisar ideias com demanda real, analisar a concorrência sem medo e checar custos de compra e margem de lucro.
+                        </p>
+                    </div>
+
+                    <!-- 03 -->
+                    <div class="content-card">
+                        <div class="card-top-meta">
+                            <span class="content-number">03</span>
+                            <span class="content-icon">🏪</span>
+                        </div>
+                        <h3 class="content-title">CRIANDO SUA LOJA</h3>
+                        <p class="content-desc">
+                            Organização básica do perfil, configuração inicial sem burocracia e preparação correta para publicar seus produtos.
+                        </p>
+                    </div>
+
+                    <!-- 04 -->
+                    <div class="content-card">
+                        <div class="card-top-meta">
+                            <span class="content-number">04</span>
+                            <span class="content-icon">📝</span>
+                        </div>
+                        <h3 class="content-title">CRIANDO ANÚNCIOS</h3>
+                        <p class="content-desc">
+                            Como estruturar títulos com palavras de busca, tirar fotos limpas usando seu celular e escrever descrições que convertem.
+                        </p>
+                    </div>
+
+                    <!-- 05 -->
+                    <div class="content-card">
+                        <div class="card-top-meta">
+                            <span class="content-number">05</span>
+                            <span class="content-icon">🎬</span>
+                        </div>
+                        <h3 class="content-title">DIVULGAÇÃO</h3>
+                        <p class="content-desc">
+                            Ideias para TikTok e Reels, formatos práticos de demonstração de produtos e técnicas de conteúdo sem precisar aparecer.
+                        </p>
+                    </div>
+
+                    <!-- 06 -->
+                    <div class="content-card">
+                        <div class="card-top-meta">
+                            <span class="content-number">06</span>
+                            <span class="content-icon">📈</span>
+                        </div>
+                        <h3 class="content-title">PRÓXIMOS PASSOS</h3>
+                        <p class="content-desc">
+                            Como acompanhar suas primeiras visitas, fazer pequenas melhorias nos anúncios e construir uma rotina sustentável de vendas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             5. SEÇÃO PREÇO / OFERTA
+             ============================================================================== -->
+        <section class="offer-section" id="oferta">
+            <div class="container">
+                <div class="offer-glow-wrapper">
+                    <div class="offer-box">
+                        <div class="offer-badge-tag">OFERTA DE LANÇAMENTO</div>
+
+                        <h2 class="offer-main-title">COMECE A CONSTRUIR SUA LOJA ONLINE</h2>
+                        <p class="offer-main-desc">
+                            Aprenda a vender de forma organizada e sem promessas mirabolantes.
+                        </p>
+
+                        <!-- Box de Preço -->
+                        <div class="pricing-display">
+                            <div class="price-original-line">
+                                <span>DE:</span>
+                                <span class="strike">R$ 49,90</span>
+                            </div>
+                            <div class="price-highlight-line">
+                                <span class="por-label">POR APENAS:</span>
+                                <div class="price-val">
+                                    <span class="p-curr">R$</span>
+                                    <span class="p-num">19</span>
+                                    <span class="p-cents">,90</span>
+                                </div>
+                            </div>
+                            <span class="price-note">Pagamento único. Acesso vitalício ao material.</span>
+                        </div>
+
+                        <!-- Itens Inclusos -->
+                        <div class="offer-checklist">
+                            <div class="check-row">
+                                <span class="check-symbol">✓</span>
+                                <span><strong>Ebook Completo</strong> com 20 páginas de conteúdo direto ao ponto</span>
+                            </div>
+                            <div class="check-row">
+                                <span class="check-symbol">✓</span>
+                                <span><strong>Bônus 1:</strong> 20 Ideias de vídeos prontos para divulgar sem aparecer</span>
+                            </div>
+                            <div class="check-row">
+                                <span class="check-symbol">✓</span>
+                                <span><strong>Bônus 2:</strong> Roteiro de 30 segundos cronometrado</span>
+                            </div>
+                            <div class="check-row">
+                                <span class="check-symbol">✓</span>
+                                <span><strong>Bônus 3:</strong> Plano de Ação estruturado de 30 Dias (Semana 1 a 4)</span>
+                            </div>
+                            <div class="check-row">
+                                <span class="check-symbol">✓</span>
+                                <span><strong>Materiais de Apoio:</strong> Modelo de Anúncio Pronto + Checklist Completo</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Principal -->
+                        <div class="offer-button-area">
+                            <a href="{{ checkout_url }}" class="btn btn-xl btn-primary btn-pulse checkout-btn" target="_blank" rel="noopener noreferrer">
+                                <span>QUERO COMEÇAR AGORA</span>
+                                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <p class="safe-checkout-note">
+                                🔒 Acesso ao material digital imediatamente após a confirmação do pagamento.
+                            </p>
+                        </div>
+
+                        <!-- Selos de Segurança -->
+                        <div class="security-badges-row">
+                            <div class="s-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <span>Pagamento Criptografado</span>
+                            </div>
+                            <div class="s-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                <span>Privacidade Garantida</span>
+                            </div>
+                            <div class="s-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Entrega Imediata</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             6. FAQ (PERGUNTAS FREQUENTES COM ACORDEÃO JS)
+             ============================================================================== -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Tire suas dúvidas</span>
+                    <h2 class="section-title">
+                        PERGUNTAS <span class="highlight-orange">FREQUENTES</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Tudo o que você precisa saber antes de adquirir o guia.
+                    </p>
+                </div>
+
+                <div class="faq-accordion-list" id="faqAccordion">
+                    <!-- Pergunta 1 -->
+                    <div class="faq-item active">
+                        <button class="faq-question" type="button" aria-expanded="true">
+                            <span>Preciso ter experiência?</span>
+                            <span class="faq-plus-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Não. O material foi pensado principalmente para pessoas que estão começando do absoluto zero e nunca venderam pela internet.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Preciso aparecer nos vídeos?</span>
+                            <span class="faq-plus-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Não necessariamente. Existem formas de criar conteúdo mostrando produtos, imagens, textos e gravações de tela.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Vou conseguir vender com certeza?</span>
+                            <span class="faq-plus-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Não existe garantia de vendas. Os resultados dependem de diversos fatores como dedicação, escolha do produto e demanda de mercado. O objetivo do material é ensinar e organizar os primeiros passos com clareza.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Por onde vou receber o material?</span>
+                            <span class="faq-plus-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>O acesso será entregue conforme a configuração da plataforma de pagamento e área de membros diretamente no seu e-mail cadastrado logo após a confirmação do pagamento.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 5 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Posso acessar pelo celular?</span>
+                            <span class="faq-plus-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Sim. O conteúdo digital é em formato PDF de alta qualidade, otimizado para celulares, tablets e computadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==============================================================================
+         MODAL LIGHTBOX PARA VISUALIZAR A PÁGINA AMPLIADA
+         ============================================================================== -->
+    <div id="pageLightbox" class="lightbox-modal" style="display: none;">
+        <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+        <div class="lightbox-dialog">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fechar">&times;</button>
+            <div class="lightbox-header">
+                <h3 id="lightboxTitle">Visualização da Página</h3>
+                <p id="lightboxDesc">Conteúdo real do material</p>
+            </div>
+            <div class="lightbox-body">
+                <img id="lightboxImg" src="" alt="Página ampliada do ebook">
+            </div>
+            <div class="lightbox-footer">
+                <span>Gostou do conteúdo? Tenha acesso completo agora mesmo:</span>
+                <a href="{{ checkout_url }}" class="btn btn-sm btn-primary checkout-btn" target="_blank" rel="noopener noreferrer">
+                    Quero Começar Por Apenas R$ 19,90
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================================================
+         RODAPÉ
+         ============================================================================== -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="brand-logo footer-logo">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                    </span>
+                    <span class="brand-text">VENDA DO <span class="accent-orange">ZERO</span></span>
+                </a>
+                <p class="footer-desc">
+                    Conteúdo educacional para quem deseja aprender os primeiros passos das vendas online na Shopee e no Mercado Livre.
+                </p>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#previas">O que você recebe</a></li>
+                    <li><a href="#conteudo">Conteúdo</a></li>
+                    <li><a href="#oferta">Oferta</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-actions">
+                <h4>Acesso Rápido</h4>
+                <a href="{{ checkout_url }}" class="btn btn-sm btn-primary checkout-btn" target="_blank" rel="noopener noreferrer">
+                    Quero Começar Agora
+                </a>
+                <p class="footer-support-text">
+                    Dúvidas? <a href="mailto:{{ support_email }}">{{ support_email }}</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p class="disclaimer">
+                    <strong>Aviso Legal:</strong> Este site e este produto não têm nenhum vínculo oficial, afiliação, parceria ou endosso da Shopee ou do Mercado Livre. Todas as marcas e logotipos pertencem exclusivamente a seus respectivos titulares. O conteúdo tem finalidade estritamente educacional.
+                </p>
+                <p class="copyright">
+                    &copy; 2026 VENDA DO ZERO. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE VOLTAR AO TOPO -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao início">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
