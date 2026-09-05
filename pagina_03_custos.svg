@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p3Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141720"/>
+      <stop offset="100%" stop-color="#0E1017"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="700" rx="12" fill="url(#p3Bg)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+
+  <!-- Top Header -->
+  <g transform="translate(40, 45)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#FF6B00" letter-spacing="1">MÓDULO 02 • PRECIFICAÇÃO E TAXAS</text>
+    <text x="420" y="0" text-anchor="end" font-family="'Inter', sans-serif" font-size="11" fill="#777">PÁGINA 22</text>
+    <line x1="0" y1="12" x2="420" y2="12" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(40, 85)">
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#FFF">Como Calcular Seus Custos</text>
+    <text x="0" y="48" font-family="'Inter', sans-serif" font-size="12" fill="#8892B0">Estrutura simples para não vender no prejuízo e entender cada centavo da sua operação.</text>
+  </g>
+
+  <!-- Pricing Table Component -->
+  <g transform="translate(40, 160)">
+    <rect width="420" height="270" rx="8" fill="#1A1E29" stroke="rgba(255,255,255,0.08)"/>
+    
+    <!-- Table Header -->
+    <rect width="420" height="38" rx="8 8 0 0" fill="#202534"/>
+    <text x="20" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#CAD2E0">COMPOSIÇÃO DE CUSTOS</text>
+    <text x="320" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#CAD2E0">EXEMPLO REAL</text>
+
+    <!-- Rows -->
+    <g transform="translate(20, 56)" font-family="'Inter', sans-serif" font-size="12">
+      <!-- Row 1 -->
+      <text x="0" y="16" fill="#FFF">Custo de Aquisição do Produto</text>
+      <text x="300" y="16" fill="#FFF" font-weight="600">R$ 14,00</text>
+      <line x1="0" y1="28" x2="380" y2="28" stroke="rgba(255,255,255,0.04)"/>
+
+      <!-- Row 2 -->
+      <text x="0" y="46" fill="#FFF">Embalagem (Caixa/Envelope + Fita + Etiqueta)</text>
+      <text x="300" y="46" fill="#FFF" font-weight="600">R$ 1,50</text>
+      <line x1="0" y1="58" x2="380" y2="58" stroke="rgba(255,255,255,0.04)"/>
+
+      <!-- Row 3 -->
+      <text x="0" y="76" fill="#FFF">Comissão da Plataforma (~18%)</text>
+      <text x="300" y="76" fill="#FFF" font-weight="600">R$ 7,18</text>
+      <line x1="0" y1="88" x2="380" y2="88" stroke="rgba(255,255,255,0.04)"/>
+
+      <!-- Row 4 -->
+      <text x="0" y="106" fill="#FFF">Taxa Fixa por Item Vendido</text>
+      <text x="300" y="106" fill="#FFF" font-weight="600">R$ 4,00</text>
+      <line x1="0" y1="118" x2="380" y2="118" stroke="rgba(255,255,255,0.04)"/>
+
+      <!-- Row 5 -->
+      <text x="0" y="136" fill="#8892B0">Total de Custos &amp; Taxas Operacionais</text>
+      <text x="300" y="136" fill="#8892B0" font-weight="600">R$ 26,68</text>
+      <line x1="0" y1="148" x2="380" y2="148" stroke="rgba(255,107,0,0.3)"/>
+
+      <!-- Result Highlight -->
+      <rect x="-10" y="156" width="400" height="46" rx="6" fill="rgba(255,107,0,0.1)"/>
+      <text x="0" y="184" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" fill="#FFF">Preço de Venda Sugerido</text>
+      <text x="300" y="184" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" fill="#FF6B00" font-size="14">R$ 39,90</text>
+    </g>
+  </g>
+
+  <!-- Key Insight Box -->
+  <g transform="translate(40, 455)">
+    <rect width="420" height="150" rx="8" fill="#151822" stroke="rgba(255,255,255,0.05)"/>
+    <text x="20" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FF8A3D">LUCRO LÍQUIDO ESTIMADO:</text>
+    <g transform="translate(20, 42)" font-family="'Inter', sans-serif" font-size="11" fill="#CAD2E0">
+      <text x="0" y="16">Sobram <tspan fill="#48BB78" font-weight="bold">R$ 13,22</tspan> limpos no bolso por cada unidade vendida (33% margem líquida).</text>
+      <text x="0" y="44" fill="#8892B0">Regra de Ouro do Guia:</text>
+      <text x="0" y="66">"Nunca defina seu preço apenas copiando o concorrente mais barato.</text>
+      <text x="0" y="86">Primeiro calcule seus custos exatos para proteger sua lucratividade."</text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(40, 640)">
+    <line x1="0" y1="0" x2="420" y2="0" stroke="rgba(255,255,255,0.08)"/>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#FFF">VENDA DO <tspan fill="#FF6B00">ZERO</tspan></text>
+    <text x="420" y="24" text-anchor="end" font-family="'Inter', sans-serif" font-size="10" fill="#666">GUIA PRÁTICO • SHOPEE &amp; MERCADO LIVRE</text>
+  </g>
+</svg>
